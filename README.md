@@ -36,45 +36,7 @@ src/
 public/
 ├── productos.json
 └── img/
-```
 
-## Ejecutar el proyecto
-
-Primero instalar las dependencias:
-
-```bash
-npm install
-```
-
-Después iniciar el proyecto:
-
-```bash
-npm run dev
-```
-
-Vite mostrará la dirección local para abrir la aplicación en el navegador.
-
-## Publicar en GitHub Pages
-
-El proyecto ya tiene configurado el script de `gh-pages`.
-
-Después de subir el proyecto a GitHub se puede publicar con:
-
-```bash
-npm run deploy
-```
-
-Esto genera la rama `gh-pages` con la versión compilada del proyecto.
-
-## Capturas
-
-En la carpeta `capturas` se pueden guardar las evidencias de:
-
-- Catálogo cargado dinámicamente.
-- Productos agregados y eliminados del carrito.
-- Carrito vacío.
-- Botón "En el carrito".
-- Vista responsiva.
 
 ## Autor
 
