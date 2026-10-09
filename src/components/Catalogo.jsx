@@ -3,37 +3,53 @@ import ProductoCard from './ProductoCard.jsx'
 function Catalogo({
   productos,
   carrito,
+  categorias,
+  categoria,
   busqueda,
-  plataforma,
   cargando,
   error,
   onBusqueda,
-  onMostrarTodos,
-  onAgregar
+  onCategoria,
+  onAgregar,
+  onLimpiarFiltros
 }) {
   return (
     <section id="productos" className="py-5">
       <div className="container">
         <div className="row align-items-end g-3 mb-4">
-          <div className="col-lg-6">
+          <div className="col-lg-5">
             <p className="text-primary text-uppercase fw-bold small mb-1">Catálogo dinámico</p>
             <h2 className="fw-bold mb-1">Videojuegos disponibles</h2>
             <p className="text-secondary mb-0">
-              {plataforma === 'Todas' ? 'Mostrando todas las plataformas.' : `Plataforma: ${plataforma}.`}
+              Puedes buscar por nombre o filtrar el catálogo por categoría.
             </p>
           </div>
 
-          <div className="col-lg-6">
+          <div className="col-md-7 col-lg-4">
             <label htmlFor="busqueda" className="form-label">Buscar videojuego</label>
+            <input
+              id="busqueda"
+              className="form-control form-control-lg"
+              value={busqueda}
+              onChange={(evento) => onBusqueda(evento.target.value)}
+              placeholder="Nombre o plataforma"
+            />
+          </div>
+
+          <div className="col-md-5 col-lg-3">
+            <label htmlFor="categoria" className="form-label">Categoría</label>
             <div className="input-group input-group-lg">
-              <input
-                id="busqueda"
-                className="form-control"
-                value={busqueda}
-                onChange={(evento) => onBusqueda(evento.target.value)}
-                placeholder="Nombre, categoría o plataforma"
-              />
-              <button className="btn btn-dark" type="button" onClick={onMostrarTodos}>Ver todos</button>
+              <select
+                id="categoria"
+                className="form-select"
+                value={categoria}
+                onChange={(evento) => onCategoria(evento.target.value)}
+              >
+                {categorias.map((item) => (
+                  <option value={item} key={item}>{item}</option>
+                ))}
+              </select>
+              <button className="btn btn-dark" type="button" onClick={onLimpiarFiltros}>Limpiar</button>
             </div>
           </div>
         </div>

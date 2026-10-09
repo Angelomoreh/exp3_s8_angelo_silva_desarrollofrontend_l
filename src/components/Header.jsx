@@ -1,4 +1,4 @@
-function Header({ cantidadCarrito, onFiltrar }) {
+function Header({ cantidadCarrito }) {
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
@@ -21,13 +21,8 @@ function Header({ cantidadCarrito, onFiltrar }) {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item"><a className="nav-link active" href="#inicio">Inicio</a></li>
               <li className="nav-item"><a className="nav-link" href="#productos">Productos</a></li>
-              {['PlayStation', 'Nintendo', 'Xbox', 'PC'].map((nombre) => (
-                <li className="nav-item" key={nombre}>
-                  <button className="nav-link btn btn-link" type="button" onClick={() => onFiltrar(nombre)}>
-                    {nombre}
-                  </button>
-                </li>
-              ))}
+              <li className="nav-item"><a className="nav-link" href="#gestion">Gestión</a></li>
+              <li className="nav-item"><a className="nav-link" href="#contacto">Contacto</a></li>
             </ul>
 
             <a className="btn btn-outline-light" href="#carrito">
